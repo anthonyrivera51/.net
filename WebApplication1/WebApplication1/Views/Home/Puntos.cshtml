@@ -1,0 +1,38 @@
+﻿
+@model WebApplication1.Models.ModelUsers;
+
+@{
+    ViewData["Title"] = "Cargar Puntos";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Login
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("putPuntos", "Home"))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Identificacion)
+                        @Html.TextBoxFor(m => m.Identificacion, "", new { @class = "form-control", @placeholder = "Identificacion" })
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.puntos)
+                        @Html.TextBoxFor(m => m.puntos, new { @class = "form-control", @placeholder = "Puntos" })
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="submit" class="btn btn-primary" value="Cargar Puntos" />
+                    </div>
+                }
+                </div>
+        </div>
+    </div>
+</div>
+
+<p>Use this page to detail your site's privacy policy.</p>

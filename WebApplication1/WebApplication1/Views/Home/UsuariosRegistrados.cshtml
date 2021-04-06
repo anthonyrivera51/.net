@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication1.Models.ModelUsers>
+
+@{
+    ViewData["Title"] = "UsuariosRegistrados";
+}
+<div class="form-horizontal">
+
+    <h1>Listado de Usuarios</h1>
+    <hr />
+    <div class="form-group">
+
+
+        <table class="table table-responsive" style="width:400px">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.edad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cargo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.puntos)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre) @Html.DisplayFor(modelItem => item.Apellidos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.edad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cargo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.puntos)
+                    </td>
+
+                </tr>
+
+            }
+
+        </table>
+    </div>
+</div>
+
